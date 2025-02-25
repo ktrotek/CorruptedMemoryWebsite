@@ -1,0 +1,749 @@
+/* Google Fonts */
+body {
+    font-family: 'Exo 2';
+    font-size: 1.3rem;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Orbitron';
+    font-weight: 700; /* Bold for headers */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-size: 1.3rem; /* 30% larger than default (16px * 1.3 = 20.8px) */
+}
+
+/* Header Styles */
+header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem; /* 30% larger padding */
+    margin: 0; /* Remove default margin */
+    height: 4rem;
+}
+
+header a {
+    color: #008F11;
+    text-decoration: none;
+    margin: 0 1rem; /* 30% larger margin */
+    font-size: 1.3rem; /* 30% larger font size */
+    height: 100%;
+}
+
+header img {
+    height: 140%; /* Make logo fill header height */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow */
+    object-fit: contain; /* Ensure full visibility */
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: -2rem;
+    width: 100%;
+    background-color: black;
+    padding: 1.5rem; /* 30% larger padding */
+    text-align: right;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem; /* 30% larger margin */
+    font-size: 1.3rem; /* 30% larger font size */
+}
+
+.Btn {
+    bottom: 0;
+    right: 2rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+
+
+/* Product Categories Styles */
+.productCategories {
+    text-align: center;
+    font-size: 1.3rem; /* 30% larger font size */
+    color: white;
+    margin-bottom: 2em;
+    
+}
+
+.productCategories a {
+    color: black; /* Set link color to white */
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+    animation: pulse 3s ease-in-out infinite;
+    padding: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 10000;
+    text-decoration: none; /* Remove underline */
+
+}
+
+
+.productCategories a:hover {
+    color: #00ca18; /* Change color on hover */
+    -webkit-text-stroke: 0.03rem rgb(0, 0, 0);
+
+}
+
+.productCategories a:not(:last-child)::after {
+    text-decoration: none;
+    content:" /"; /* Add a slash after each link except the last one */
+    margin-left: 0.5rem; /* Add spacing between the link and the slash */
+}
+
+.productCategories a.active {
+    color: #00ca18 !important;
+    -webkit-text-stroke: 0.03rem black !important;
+    border-bottom: 2px solid #00ca18;
+}
+
+/* Product Container Styles */
+.productContainer {
+    height: 85vh;
+    background-size: 100% 140%;
+    background-image: url('Images/cyberascii.png');
+    background-repeat: repeat-y;
+}
+
+.productCategoriesTitle {
+    margin: 0;  
+    text-align: center;
+    font-size: 2.3rem;
+    -webkit-text-stroke: 0.04rem rgb(188, 252, 175);
+    padding: 0.8rem;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.productCategoriesTitleAboutUs {
+    text-align: center;
+    font-size: 2.3rem;
+    -webkit-text-stroke: 0.04rem rgb(188, 252, 175);
+    padding: 0.1rem;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.productContainerAboutUs {
+    height: 85vh;
+    background-size: 100% 140%;
+    background-image: url('Images/cyberascii.png');
+    background-repeat: repeat-y;
+}
+
+.productCategoriesTitle h3 {
+    animation: pulse 3s ease-in-out infinite;
+    
+}
+
+button {
+    border: 2px solid #00ca18;
+    padding: 1.5rem 3rem; /* 30% larger padding */
+    font-size: 1.3rem; /* 30% larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    background: rgba(0, 0, 0, 0.8);
+    color: #008F11;
+    animation: pulse 3s ease-in-out infinite;
+    margin-top: 2.5rem;
+    transition: transform 0.4s ease; /* Add smooth transition */
+    animation: text-glitch 4s infinite;
+}
+
+button:hover {
+    background-color: black;
+    transform: scale(1.10);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.landingPage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-size: 100% 140%;
+    background-image: url('Images/cyberascii.png');
+    background-repeat: no-repeat;
+ 
+}
+
+.landingPage h3 {
+    color: #00ca18;
+    -webkit-text-stroke: 0.05rem black;
+    animation: pulse 3s ease-in-out infinite;
+    padding: 1.4rem;
+    font-size: 1.3rem;
+    border: 1px solid #00ca18;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.landingPage h1 {
+    color: #00ca18;
+    -webkit-text-stroke: 0.1rem black;
+    border: 1px solid #00ca18;
+    font-size: 3rem;
+    animation: pulse 3s ease-in-out infinite;
+    padding: 1.8rem;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 50px black, 0 0 120px black;
+    }
+    50% {
+        box-shadow: 0 0 60px black, 0 0 250px black;
+    }
+}
+/* Product Page Styles */
+.productPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.productsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    width: 100%;
+    height: 33em;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    transition: all 120ms;
+    background: #fff;
+    padding-bottom: 3.4em;
+    margin-bottom: 2rem;
+    padding: 0.5em;
+}
+
+.card::after {
+    content: "Add to Cart";
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: #00AC7C;
+    color: #fff;
+    height: 2.5em;
+    width: 90%;
+    transition: all 80ms;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.card .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #000;
+    font-weight: bold;
+}
+
+.card .price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #008F11;
+    text-shadow: 2px 0px rgb(118, 114, 114);
+}
+
+.card:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card:active::after {
+    content: "Added !";
+    height: 3.125em;
+}
+
+.image {
+    width: 100%; /* Make the image container fill the card width */
+    height: 28em; /* Set a fixed height for the image container */
+    background: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
+.image img {
+    transition: transform 1s ease;
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.card:hover .image img {
+    transform: scale(1.10); /* Scale up on hover */
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 0 0 calc(50% - 2rem); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 100%; /* 1 column on mobile */
+    }
+}
+
+/* About Page Styles */
+.aboutContent {
+        max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.cyber-text {
+    animation: pulse 3s ease-in-out infinite;
+
+    color: antiquewhite;
+    border: 2px solid #00ca18;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.glitch-text {
+    letter-spacing:0.3rem;
+    text-align: center;
+    font-size: 2.9rem;
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+    animation: text-glitch 1.5s infinite;
+    padding: 0;
+}
+
+.store-info {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.store-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.store-info li {
+    margin: 1rem 0;
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+}
+
+@keyframes text-glitch {
+    0% { text-shadow: 2px 2px #000000, -2px -2px #ffffff; }
+    50% { text-shadow: -2px -2px #ffffff, 2px 2px #000000; }
+    100% { text-shadow: 2px -2px #000000, -2px 2px #ffffff; }
+}
+
+.pulse-box {
+    border: 1px solid #00ca18;
+    padding: 3rem;
+    margin: 0rem;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Shipping Page Styles */
+.shipping-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    gap: 3rem;
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.shipping-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border: 1px solid #00ca18;
+}
+
+.cyber-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.6rem;
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+}
+
+.cyber-list li {
+    margin: 1.5rem 0;
+    padding-left: 1.6rem;
+    position: relative;
+    
+}
+
+.cyber-list li::before {
+    color: #00ca18;
+    position: absolute;
+    left: 0;
+}
+
+.crypto-notice {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ca18;
+}
+
+.crypto-address {
+    font-family: 'Courier New', monospace;
+    color: #00ca18;
+    letter-spacing: 2px;
+}
+
+.monero-logo {
+    font-size: 4rem;
+    color: #ff6600;
+    margin: 1rem 0;
+    text-shadow: 0 0 10px #ff6600;
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .shipping-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-list {
+        font-size: 1rem;
+    }
+}
+
+/* Contact Page Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1600px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.contact-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border: 1px solid #00ca18;
+    text-align: center;
+}
+
+.cyber-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.glitch-input {
+    background: black;
+    border: 1px solid #00ca18;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.8rem;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+}
+
+.glitch-input::placeholder {
+    color: #666;
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cyber-button {
+    background: black;
+    border: 2px solid #00ca18;
+    color: #00ca18;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+
+.cyber-button:hover {
+    background: #00ca18;
+    color: black;
+    transform: scale(1.05);
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ca18;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-form {
+        width: 90%;
+    }
+}
+
+/* Contact Page Updates */
+.contact-card {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.comms-note {
+    color: #00ca18;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.form-description {
+    text-align: center;
+    color: #00ca18;
+    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+        margin: 1rem 0 2rem;
+
+}
+
+.cyber-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.crypto-address a {
+    color: #00ca18;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.crypto-address a:hover {
+    color: #00ff22;
+}
+
+/* Best Sellers Album Container */
+.bestSellersAlbum {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ca18;
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Adjust height as needed */
+}
+
+/* Best Sellers Album Images */
+.bestSellersAlbum img {
+    position:relative;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the whole picture is visible */
+    opacity: 0;
+    animation: fade 40s infinite;
+}
+
+/* Stagger Animation Delays for Each Image */
+.bestSellersAlbum img:nth-child(1) {
+    animation-delay: 0s;
+}
+.bestSellersAlbum img:nth-child(2) {
+    animation-delay: 10s;
+}
+.bestSellersAlbum img:nth-child(3) {
+    animation-delay: 20s;
+}
+.bestSellersAlbum img:nth-child(4) {
+    animation-delay: 30s;
+}
+
+/* Fade In/Out Keyframes */
+@keyframes fade {
+    0%   { opacity: 0; }
+    12.5% { opacity: 1; }   /* Fade in */
+    37.5% { opacity: 1; }   /* Stay visible */
+    50%  { opacity: 0; }    /* Fade out */
+    100% { opacity: 0; }
+}
+
+.container {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 50%;
+  }
+  
+  .play-btn {
+    position: absolute;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#ff6347, #ff6347);
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .play-btn::before {
+    content: "";
+    position: absolute;
+    width: 93%;
+    height: 93%;
+    background-color: #000;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .play-btn:checked {
+    animation: borderAnimate 700ms ease-in-out 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes borderAnimate {
+    0% {
+      transform: rotate(0);
+      background: conic-gradient(#ff6347, transparent 20%);
+    }
+  
+    80% {
+      background: conic-gradient(#ff6347, transparent 90%);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+      background: conic-gradient(#ff6347, #ff6347);
+    }
+  }
+  
+  .play-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 60%;
+    top: 50%;
+    background-color: #ff6347;
+    transform: translate(-60%, -50%) rotate(90deg);
+    clip-path: polygon(50% 15%, 0% 100%, 100% 100%);
+    transition: all 400ms ease-in-out;
+    cursor: pointer;
+  }
+  
+  .play-btn:checked + .play-icon {
+    clip-path: polygon(0 100%, 0% 100%, 100% 100%);
+  }
+  
+  .pause-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .pause-icon::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: #ff6347;
+    left: 0;
+  }
+  
+  .pause-icon::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #ff6347;
+    right: 0;
+  }
+  
+  .play-btn:checked ~ .pause-icon::before {
+    animation: reveal 300ms ease-in-out 350ms 1;
+    animation-fill-mode: forwards;
+  }
+  
+  .play-btn:checked ~ .pause-icon::after {
+    animation: reveal 300ms ease-in-out 600ms 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes reveal {
+    0% {
+      width: 0;
+    }
+  
+    100% {
+      width: 35%;
+    }
+  }
+
