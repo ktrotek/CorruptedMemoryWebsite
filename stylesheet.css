@@ -654,3 +654,68 @@ button:hover {
     100% { opacity: 0; }
 }
 
+cyber-play-btn {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border: 1px solid #00ff9d;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+    margin-left: auto; /* Pushes to far right */
+  }
+  
+  .cyber-play-btn:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+    transform: scale(1.1);
+  }
+  
+  .cyber-play-btn:active {
+    transform: scale(0.9);
+  }
+  
+  .cyber-play-btn svg {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #00ff9d;
+  }
+  
+  .cyber-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: cyber-pulse 2s infinite;
+    border: 1px solid rgba(0, 255, 157, 0.2);
+  }
+  
+  @keyframes cyber-pulse {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.3); }
+  }
+  
+  /* Active state */
+  .cyber-play-btn.active {
+    border-color: #ff003c;
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+  }
+  
+  .cyber-play-btn.active .cyber-glow {
+    border-color: rgba(255, 0, 60, 0.2);
+  }
+  
+  .cyber-play-btn.active svg {
+    fill: #ff003c;
+  }
+  
+  .pause-icon { display: none; }
+  .cyber-play-btn.active .play-icon { display: none; }
+  .cyber-play-btn.active .pause-icon { display: block; }
