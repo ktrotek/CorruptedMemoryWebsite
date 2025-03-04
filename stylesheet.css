@@ -1,4 +1,4 @@
-/* Google Fonts */
+
 body {
     font-family: 'Exo 2';
     font-size: 1.3rem;
@@ -9,38 +9,37 @@ body {
 
 h1, h2, h3, h4, h5, h6, button {
     font-family: 'Orbitron';
-    font-weight: 700; /* Bold for headers */
+    font-weight: 700;
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: white;
-    font-size: 1.3rem; /* 30% larger than default (16px * 1.3 = 20.8px) */
+    font-size: 1.3rem;
 }
 
-/* Header Styles */
 header {
     background-color: black;
     display: flex;
-    justify-content: space-between; /* Space out items */
-    align-items: center; /* Vertically center items */
-    padding: 1.5rem 2rem; /* 30% larger padding */
-    margin: 0; /* Remove default margin */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1.5rem 2rem; 
+    margin: 0; 
     height: 4rem;
-    position: relative; /* For absolute positioning if needed */
+    position: relative; 
 }
 
 header a {
     color: #008F11;
     text-decoration: none;
-    margin: 0 1rem; /* 30% larger margin */
-    font-size: 1.3rem; /* 30% larger font size */
+    margin: 0 1rem; 
+    font-size: 1.3rem; 
     height: 100%;
 }
 
 header img {
-    height: 140%; /* Make logo fill header height */
+    height: 140%;
     width: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow */
     object-fit: contain; /* Ensure full visibility */
@@ -48,16 +47,15 @@ header img {
 }
 
 .logo-middle {
-    position: absolute; /* Position it absolutely within the header */
-    left: 50%; /* Move to the middle */
-    transform: translateX(-50%); /* Center it precisely */
-    height: 60%; /* Adjust height as needed */
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    height: 60%; 
     width: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent overflow */
-    object-fit: contain; /* Ensure full visibility */
+    object-fit: contain; 
 }
 
-/* Style for the right logo */
 .logo-left {
     height: 140%; /* Adjust height as needed */
     width: auto; /* Maintain aspect ratio */
@@ -66,26 +64,22 @@ header img {
     margin-right: auto; /* Push it to the right */
 }
 
-/* ` Styles */
 footer {
     position: fixed;
     bottom: 0;
     left: -2rem;
     width: 100%;
     background-color: black;
-    padding: 1.5rem; /* 30% larger padding */
+    padding: 1.5rem; 
     text-align: right;
 }
 
 footer a {
     color: white;
     text-decoration: none;
-    margin: 0 1rem; /* 30% larger margin */
-    font-size: 1.3rem; /* 30% larger font size */
+    margin: 0 1rem; 
+    font-size: 1.3rem; 
 }
-
-
-
 
 .Btn {
     bottom: 0;
@@ -98,14 +92,9 @@ footer a {
     transition: all .5s;
 }
 
-
-
-
-
-/* Product Categories Styles */
 .productCategories {
     text-align: center;
-    font-size: 1.3rem; /* 30% larger font size */
+    font-size: 1.3rem;
     color: white;
     margin-bottom: 2em;
     
@@ -118,13 +107,13 @@ footer a {
     padding: 0.8rem;
     font-size: 1.5rem;
     font-weight: 10000;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none; 
 
 }
 
 
 .productCategories a:hover {
-    color: #00ca18; /* Change color on hover */
+    color: #00ca18; 
     -webkit-text-stroke: 0.03rem rgb(0, 0, 0);
 
 }
@@ -141,12 +130,12 @@ footer a {
     border-bottom: 2px solid #00ca18;
 }
 
-/* Product Container Styles */
 .productContainer {
     height: 85vh;
     background-size: 100% 140%;
     background-image: url('Images/cyberascii.png');
     background-repeat: repeat-y;
+ 
 }
 
 .productCategoriesTitle {
@@ -326,39 +315,29 @@ button:hover {
 }
 
 .image {
-    width: 100%; /* Make the image container fill the card width */
-    height: 28em; /* Set a fixed height for the image container */
+    width: 100%; 
+    height: 28em; 
     background: rgb(241, 241, 241);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Ensure the image doesn't overflow */
+    overflow: hidden; 
 }
 
 .image img {
     transition: transform 1s ease;
-    width: 100%; /* Make the image fill the container */
-    height: 100%; /* Make the image fill the container */
-    object-fit: cover; /* Ensure the image covers the container without distortion */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
 }
 
 .card:hover .image img {
-    transform: scale(1.10); /* Scale up on hover */
+    transform: scale(1.10); 
 }
 
-@media (max-width: 1024px) {
-    .card {
-        flex: 0 0 calc(50% - 2rem); /* 2 columns on tablets */
-    }
-}
 
-@media (max-width: 768px) {
-    .card {
-        flex: 0 0 100%; /* 1 column on mobile */
-    }
-}
 
-/* About Page Styles */
+
 .aboutContent {
         max-width: 1500px;
     margin: 0 auto;
@@ -480,17 +459,6 @@ button:hover {
     margin: 2rem 0;
 }
 
-@media (max-width: 768px) {
-    .shipping-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cyber-list {
-        font-size: 1rem;
-    }
-}
-
-/* Contact Page Styles */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -564,17 +532,6 @@ button:hover {
     border: 2px solid #00ca18;
 }
 
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cyber-form {
-        width: 90%;
-    }
-}
-
-/* Contact Page Updates */
 .contact-card {
     max-width: 600px;
     margin: 2rem auto;
@@ -663,7 +620,6 @@ button:hover {
     --size: 30px;
     --accent: #00ff9d;
     --accent-active: #ff003c;
-    
     width: var(--size);
     height: var(--size);
     background: #000;
@@ -704,7 +660,6 @@ button:hover {
     opacity: 0.4;
 }
 
-/* Active State */
 .cyber-play-btn.active {
     border-color: var(--accent-active);
     box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
@@ -719,7 +674,6 @@ button:hover {
     }
 }
 
-/* Animations */
 @keyframes cyber-pulse {
     0%, 100% { transform: scale(1); opacity: 0.4; }
     50% { transform: scale(1.15); opacity: 0.2; }
@@ -730,24 +684,112 @@ button:hover {
     50% { transform: scale(1.1); opacity: 0.2; }
 }
 
-/* Icon States */
 .pause-icon { display: none; }
 .cyber-play-btn.active .play-icon { display: none; }
 .cyber-play-btn.active .pause-icon { display: block; }
 
-/* Mobile Optimization */
 @media (max-width: 768px) {
-    footer {
-        padding: 1rem;
-        justify-content: flex-start;
-    }
     
-    .cyber-play-btn {
-        left: 1rem;
-        --size: 28px;
-        position: relative;
-        bottom: auto;
-        transform: none;
-        margin-right: auto;
-    }
+body {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem; /* Base font size */
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    margin: 0.5em 0;
+}
+
+/* Header Optimization */
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: auto;
+    position: relative;
+}
+
+header a {
+    color: #008F11;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+}
+
+header img {
+    max-height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-middle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 4rem;
+}
+
+.logo-left {
+    position: absolute;
+    left: 10%;
+}
+.productCategories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.productCategories a {
+    font-size: 1rem;
+    padding: 0.5rem;
+    -webkit-text-stroke: 0.02rem rgb(188, 252, 175);
+}
+
+.productsList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.image {
+    height: 250px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    text-align: center;
+    background-color: black;
+}
+
+footer a {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.bestSellersAlbum{
+    max-height: 40%;
+}
 }
