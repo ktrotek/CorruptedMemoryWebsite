@@ -1,8 +1,7 @@
-
 body {
     font-family: 'Exo 2';
     font-size: 1.3rem;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
 }
@@ -15,7 +14,7 @@ h1, h2, h3, h4, h5, h6, button {
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     font-size: 1.3rem;
 }
 
@@ -31,7 +30,7 @@ header {
 }
 
 header a {
-    color: #008F11;
+    color: #000000;
     text-decoration: none;
     margin: 0 1rem; 
     font-size: 1.3rem; 
@@ -40,9 +39,9 @@ header a {
 
 header img {
     height: 140%;
-    width: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow */
-    object-fit: contain; /* Ensure full visibility */
+    width: auto; 
+    max-width: 100%; 
+    object-fit: contain;
     justify-content: first baseline;
 }
 
@@ -51,18 +50,17 @@ header img {
     left: 50%; 
     transform: translateX(-50%); 
     height: 60%; 
-    width: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow */
+    width: auto; 
+    max-width: 100%;
     object-fit: contain; 
 }
 
 .logo-left {
-    height: 140%; /* Adjust height as needed */
-    width: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow */
-    object-fit: contain; /* Ensure full visibility */
-    margin-right: auto; /* Push it to the right */
-}
+    height: 140%; 
+    width: auto; 
+    max-width: 100%;
+    object-fit: contain; 
+    margin-right: auto; }
 
 footer {
     position: fixed;
@@ -95,20 +93,19 @@ footer a {
 .productCategories {
     text-align: center;
     font-size: 1.3rem;
-    color: white;
     margin-bottom: 2em;
+    background-color: #0000005d;
     
 }
 
 .productCategories a {
-    color: black; /* Set link color to white */
-    -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
+    color: rgba(251, 251, 251, 0.656); 
+    background-color: #00000079;
     animation: pulse 3s ease-in-out infinite;
     padding: 0.8rem;
     font-size: 1.5rem;
     font-weight: 10000;
     text-decoration: none; 
-
 }
 
 
@@ -220,18 +217,23 @@ button:hover {
     background: rgba(0, 0, 0, 0.8);
 }
 
-
-
-/* Pulse Animation */
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 50px black, 0 0 120px black;
+        box-shadow: 
+            0 0 20px rgba(0, 0, 0, 0.8), 
+            0 0 50px rgba(0, 0, 0, 0.6), 
+            0 0 100px rgba(0, 0, 0, 0.4), 
+            0 0 200px rgba(0, 0, 0, 0.2);
     }
     50% {
-        box-shadow: 0 0 60px black, 0 0 250px black;
+        box-shadow: 
+            0 0 40px rgba(0, 0, 0, 0.9), 
+            0 0 100px rgba(0, 0, 0, 0.7), 
+            0 0 200px rgba(0, 0, 0, 0.5), 
+            0 0 400px rgba(0, 0, 0, 0.3);
     }
 }
-/* Product Page Styles */
+
 .productPage {
     display: flex;
     justify-content: center;
@@ -445,20 +447,9 @@ button:hover {
     letter-spacing: 2px;
 }
 
-.monero-logo {
-    font-size: 4rem;
-    color: #ff6600;
-    margin: 1rem 0;
-    text-shadow: 0 0 10px #ff6600;
+.aboutUsInfo {
+    font-size: 1rem;
 }
-
-.disclaimer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin: 2rem 0;
-}
-
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -568,7 +559,6 @@ button:hover {
     color: #00ff22;
 }
 
-/* Best Sellers Album Container */
 .bestSellersAlbum {
     max-width: 800px;
     margin: 3rem auto;
@@ -578,7 +568,7 @@ button:hover {
     border: 2px solid #00ca18;
     position: relative;
     overflow: hidden;
-    height: 400px; /* Adjust height as needed */
+    height: 400px;
 }
 
 .bestSellersAlbum img {
@@ -630,7 +620,7 @@ button:hover {
     display: grid;
     position: fixed;
     bottom: 1em;
-    left: 1em; /* Fix negative left positioning */
+    left: 1em;
     background-color: black;
     display: flex;
     align-items: center;
@@ -690,7 +680,7 @@ button:hover {
     
 body {
     font-family: 'Exo 2', sans-serif;
-    font-size: 1rem; /* Base font size */
+    font-size: 1rem;
     background-color: white;
     margin: 0;
     padding: 0;
@@ -704,13 +694,12 @@ h1, h2, h3, h4, h5, h6, button {
 }
 
 .landingPage h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     padding: 1rem;
     margin-left: 2em;
     margin-right: 2em;
 }
 
-/* Header Optimization */
 header {
     background-color: black;
     display: flex;
@@ -792,10 +781,53 @@ footer a {
     display: block;
     margin: 0.5rem 0;
     font-size: 1rem;
+    padding-left: 2em;
+
 }
 
 .bestSellersAlbum {
     max-height: 40%;
+    margin-left: 2em;
+    margin-right: 2em;
+
+}
+
+.aboutContent {
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.pulse-box {
+    padding: 1em;
+}
+
+.glitch-text {
+    font-size: 1.2em;
+}
+
+.aboutUsInfo {
+    font-size: 0.6rem;
+}
+
+
+
+.contact-form {
+    margin: 0;
+}
+
+.cyber-list, .cyber-list li {
+    font-size: 0.6rem;
+    margin: 0;
+}
+
+.shipping-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 0.5fr);
+    gap: 3rem;
+    max-width: 300px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
 }
