@@ -11,13 +11,6 @@ h1, h2, h3, h4, h5, h6, button {
     font-weight: 700;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(0, 0, 0);
-    font-size: 1.3rem;
-}
-
 header {
     background-color: black;
     display: flex;
@@ -70,6 +63,7 @@ footer {
     background-color: black;
     padding: 1.5rem; 
     text-align: right;
+    border-top: 5em;
 }
 
 footer a {
@@ -104,15 +98,24 @@ footer a {
     animation: pulse 3s ease-in-out infinite;
     padding: 0.8rem;
     font-size: 1.5rem;
-    font-weight: 10000;
+    font-weight: 1000;
     text-decoration: none; 
+    position: relative; /* Required for the ::after pseudo-element */
+    transition: text-shadow 0.3s ease, color 0.3s ease;
 }
 
 
 .productCategories a:hover {
-    color: #00ca18; 
-    -webkit-text-stroke: 0.03rem rgb(0, 0, 0);
-
+    color: black;
+    text-shadow: 
+    0.05em 0 #00ca18, 
+    -0.05em 0 #00ca18, 
+    0 0.05em #00ca18, 
+    0 -0.05em #00ca18,
+    0.025em 0.025em #00ca18, 
+    -0.025em -0.025em #00ca18, 
+    0.025em -0.025em #00ca18, 
+    -0.025em 0.025em #00ca18;
 }
 
 .productCategories a:not(:last-child)::after {
@@ -123,16 +126,14 @@ footer a {
 
 .productCategories a.active {
     color: #00ca18 !important;
-    -webkit-text-stroke: 0.03rem black !important;
     border-bottom: 2px solid #00ca18;
 }
+
 
 .productContainer {
     height: 85vh;
     background-size: 100% 140%;
-    background-image: url('Images/cyberascii.png');
-    background-repeat: repeat-y;
- 
+    background-image: url('Images/cyberascii.png'); 
 }
 
 .productCategoriesTitle {
@@ -239,6 +240,11 @@ button:hover {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    background-image: url('Images/cyberascii.png');
+    background-repeat: repeat-y; /* Repeat vertically only */
+    background-size: 100% auto; /* Full width, natural height */
+    background-position: left top;
+    padding-bottom: 6rem;
 }
 
 .productsList {
@@ -604,84 +610,12 @@ button:hover {
     100% { opacity: 0; }
 }
 
-.cyber-play-btn {
-    --size: 30px;
-    --accent: #00ff9d;
-    --accent-active: #ff003c;
-    width: var(--size);
-    height: var(--size);
-    background: #000;
-    border: 1px solid var(--accent);
-    border-radius: 50%;
-    cursor: pointer;
-    transform: translateY(50%);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
-    display: grid;
-    position: fixed;
-    bottom: 1em;
-    left: 1em;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    z-index: 1000;
-}
-
-
-.cyber-play-btn svg {
-    width: 45%;
-    height: 45%;
-    fill: var(--accent);
-    transition: fill 0.3s ease;
-}
-
-/* Glow Animation */
-.cyber-play-btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 1px solid var(--accent);
-    animation: cyber-pulse 2s infinite;
-    opacity: 0.4;
-}
-
-.cyber-play-btn.active {
-    border-color: var(--accent-active);
-    box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
-    
-    &::after {
-        border-color: var(--accent-active);
-        animation: cyber-pulse-active 1.5s infinite;
-    }
-    
-    svg {
-        fill: var(--accent-active);
-    }
-}
-
-@keyframes cyber-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.15); opacity: 0.2; }
-}
-
-@keyframes cyber-pulse-active {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.1); opacity: 0.2; }
-}
-
-.pause-icon { display: none; }
-.cyber-play-btn.active .play-icon { display: none; }
-.cyber-play-btn.active .pause-icon { display: block; }
-
 @media (max-width: 768px) {
     
 body {
     font-family: 'Exo 2', sans-serif;
     font-size: 1rem;
-    background-color: white;
+    background-color: black;
     margin: 0;
     padding: 0;
     line-height: 1.4;
