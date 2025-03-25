@@ -4,6 +4,7 @@ body {
     background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, button {
@@ -54,6 +55,8 @@ header img {
     max-width: 100%;
     object-fit: contain; 
     margin-right: auto; }
+
+    
 
 footer {
     position: fixed;
@@ -184,6 +187,8 @@ button:hover {
     transform: scale(1.10);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
 }
+
+
 
 .landingPage {
     text-align: center;
@@ -702,23 +707,6 @@ header img {
     height: 250px;
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 1rem;
-    text-align: center;
-    background-color: black;
-}
-
-footer a {
-    display: block;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    padding-left: 2em;
-
-}
-
 .bestSellersAlbum {
     max-height: 40%;
     margin-left: 2em;
@@ -744,8 +732,6 @@ footer a {
     font-size: 0.6rem;
 }
 
-
-
 .contact-form {
     margin: 0;
 }
@@ -762,6 +748,31 @@ footer a {
     max-width: 300px;
     margin: 2rem auto;
     padding: 0 2rem;
+}
+
+
+/* Full-screen overlay */
+.loadingOverlay {
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: white; /* Optional: Solid background to hide page content */
+    z-index: 9999; /* Ensure it's on top of everything */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 1; /* Start fully visible */
+    transition: opacity 1s ease-in-out; /* Fade-out animation */
+}
+
+.loadingOverlay img {
+    max-width: 100vw; 
+    max-height: 100vh;
+    
 }
 
 }
