@@ -47,7 +47,7 @@ main {
 }
 
 footer {
-    height: 3rem;
+    min-height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -301,8 +301,7 @@ footer a {
     display: flex;
     justify-content: space-between;
     position: relative;
-    bottom: 5rem;
-    right: 2.8rem;
+    bottom: 4rem;
 }
 
 
@@ -377,11 +376,12 @@ footer a {
 
 .cartDivider {
     padding: 2rem;
-    border: 2px solid #00ca18;
+    border: 1px solid #00ca18;
     color: antiquewhite;
     width: 800px;
-    margin: 3rem auto;
+    margin: 0rem auto;
     background: rgba(0, 0, 0, 0.8);
+    animation: pulse 3s ease-in-out infinite;
 }
 
 
@@ -673,9 +673,76 @@ footer a {
     100% { opacity: 0; }
 }
 
-couponBox {
-    gap: 3rem;
+.price-and-remove {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2rem; /* Space for button */
 }
+
+.itemInfo {
+    display: flex;
+    align-items: center; /* Align title next to image */
+}
+
+/* Ensure image and title are inline */
+.cartImages {
+    margin-right: 1rem;
+}
+
+/* From Uiverse.io by hannahyockel */ 
+.BtnRemove {
+    position: absolute;
+    right: 1rem;
+    transform: translateY(-90%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+   }
+   
+   .BtnRemove:hover {
+    box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+     8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+     17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+     36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+     99px 72px 143px rgba(0, 0, 0, 0.08);
+   }
+   
+   .tooltip {
+    position: relative;
+    display: inline-block;
+   }
+   
+   .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 4em;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 110%;
+   }
+   
+   .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+   }
+   
+   .tooltip:hover .tooltiptext {
+    visibility: visible;
+   }
 
 .cartContainer {
     max-width: 1500px;
@@ -684,6 +751,7 @@ couponBox {
     color: white;
     text-align: center;
 }
+
 
 /* Shopping Cart */ 
 
@@ -711,39 +779,42 @@ couponBox {
     font-size: 11px;
     color: #63656b;
   }
+
+.cartTitle  {
+    color: #00ca18;
+}
   
+.cartImages {
+    width: 8rem;
+    height: 8rem;
+    object-fit:cover;
+}   
+
+.itemInfo{
+    display: flex;
+    text-align: center;
+}
   /* cart */
   .cart {
     border-radius: 19px 19px 7px 7px;
   }
   
-  .cart .products {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 2px solid #00ca18;
-  }
-  
   .cart .products .product {
     display: grid;
-    grid-template-columns: 5rem 10rem 10px 1fr;
-    gap: 10rem;
-  }
-  
-  .cart .products .product span {
-    font-size: 13px;
-    font-weight: 600;
-    color: #00ca18; /* Color for name of product */
-    margin-bottom: 8px;
-    display: block;
-  }
-  
-  .cart .products .product p {
-    font-size: 11px;
-    font-weight: 600;
-    color: #00ca18; /* Remove BUtton */ 
-  }
-  
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 2px dotted #00ff22;
+    margin-bottom: 1rem;
+}
+
+.cart .products .product {
+    display: grid;
+    grid-template-columns: 10rem 10rem 5rem 5rem;
+    min-width: 0; /* Prevents overflow */
+}
+
+
   .cart .quantity {
     height: 30px;
     display: grid;
@@ -780,8 +851,8 @@ couponBox {
     padding-bottom: 2px;
   }
 
-  .card2 {
-    margin: 2rem 2rem 2rem 2rem;
+  .couponBox {
+    height: 2rem;
   }
   
   .card2 .small {
@@ -798,7 +869,7 @@ couponBox {
     border-radius: 7px;
   }
   
-  .coupons form2 {
+  .coupons .form2 {  /*check form2? */
     display: grid;
     grid-template-columns: 1fr 80px;
     gap: 10px;
@@ -825,7 +896,7 @@ couponBox {
   .form2 {
     display: flex;
     justify-content: flex-end;
-    margin: 0rem 2rem;
+    margin-top: 1rem;
   }
   
   .coupons form2 button {
@@ -862,14 +933,14 @@ couponBox {
   }
   
   .checkout .details span:nth-child(odd) {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #00ca18; /* Cart detail color */
     margin: auto auto auto 0;
   }
   
   .checkout .details span:nth-child(even) {
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #00ca18; /* Cart Prices */
     margin: auto 0 auto auto;
@@ -884,11 +955,14 @@ couponBox {
   }
   
   .price {
-    text-align: end;
     font-size: 22px;
     color: #00ca18; /* FInal Price */
     font-weight: 900;
     border-top: 2px solid #00ca18;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(90%);
   }
 
   .checkout .checkout-btn {
@@ -1108,6 +1182,7 @@ header img {
 }
 
 }
+
 
 /*  make a javascript image carousel to connect with wordpress
     fix background in contact to be the same as earing
