@@ -164,6 +164,7 @@ footer a {
     background-image: url('Images/cyberascii.png'); 
 }
 
+
 .productCategoriesTitle {
     margin: 0;  
     text-align: center;
@@ -277,11 +278,7 @@ footer a {
 .productsList {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
     width: 100%;
-    padding: 0 2rem;
 }
 
 .backToProducts {
@@ -304,76 +301,6 @@ footer a {
     bottom: 4rem;
 }
 
-
-/* Card Styles */
-.card {
-    cursor: pointer;
-    position: relative;
-    width: 100%;
-    height: 33em;
-    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
-    transition: all 120ms;
-    background: #fff;
-    padding-bottom: 3.4em;
-    margin-bottom: 2rem;
-    padding: 0.5em;
-    transition: transform 0.3s ease;
-}
-
-.card::after {
-    content: "Add to Cart";
-    padding-top: 1.25em;
-    padding-left: 1.25em;
-    position: absolute;
-    left: 0;
-    bottom: -60px;
-    background: #00AC7C;
-    color: #fff;
-    height: 2.5em;
-    width: 90%;
-    transition: all 80ms;
-    font-weight: 600;
-    text-transform: uppercase;
-    opacity: 0;
-}
-
-.card .title {
-    font-size: 0.9em;
-    position: absolute;
-    left: 0.625em;
-    bottom: 1.875em;
-    font-weight: 400;
-    color: #000;
-    font-weight: bold;
-}
-
-.card .price {
-   font-size: 0.9em;
-    position: absolute;
-    left: 0.625em;
-    bottom: 0.625em;
-    color: #008F11;
-    text-shadow: 2px 0px rgb(118, 114, 114);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card:hover::after {
-    bottom: 0;
-    opacity: 1;
-}
-
-.card:active {
-    transform: scale(0.98);
-}
-
-.card:active::after {
-    content: "Added !";
-    height: 3.125em;
-}
-
 .cartDivider {
     padding: 2rem;
     border: 1px solid #00ca18;
@@ -382,32 +309,8 @@ footer a {
     margin: 0rem auto;
     background: rgba(0, 0, 0, 0.8);
     animation: pulse 3s ease-in-out infinite;
+    
 }
-
-
-.image {
-    width: 100%; 
-    height: 28em; 
-    background: rgb(241, 241, 241);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
-}
-
-.image img {
-    transition: transform 1s ease;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-}
-
-.card:hover .image img {
-    transform: scale(1.10); 
-}
-
-
-
 
 .aboutContent {
     max-width: 1500px;
@@ -574,7 +477,6 @@ footer a {
     padding: 1rem 2rem;
     text-decoration: none;
     transition: all 0.3s;
-    font-family: 'Courier New', monospace;
     text-transform: uppercase;
 }
 
@@ -674,16 +576,28 @@ footer a {
 }
 
 .price-and-remove {
-    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 2rem; /* Space for button */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    min-width: 100px; /* Prevent wrapping */
 }
 
-.itemInfo {
-    display: flex;
-    align-items: center; /* Align title next to image */
+.price {
+    text-align: right;
+    margin-top: 0;
+}
+
+.BtnRemove {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+/* Ensure image dimensions */
+.cartImages {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
 }
 
 /* Ensure image and title are inline */
@@ -693,9 +607,6 @@ footer a {
 
 /* From Uiverse.io by hannahyockel */ 
 .BtnRemove {
-    position: absolute;
-    right: 1rem;
-    transform: translateY(-90%);
     background: none;
     border: none;
     padding: 0;
@@ -751,7 +662,10 @@ footer a {
     color: white;
     text-align: center;
 }
-
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* Shopping Cart */ 
 
@@ -779,9 +693,15 @@ footer a {
     font-size: 11px;
     color: #63656b;
   }
+  
 
 .cartTitle  {
     color: #00ca18;
+    display: inline;
+    text-align: center;
+    align-items: center; /* Align title next to image */
+    vertical-align: bottom;
+    border-top: 2px solid #00ca18;
 }
   
 .cartImages {
@@ -790,29 +710,79 @@ footer a {
     object-fit:cover;
 }   
 
-.itemInfo{
-    display: flex;
-    text-align: center;
-}
   /* cart */
   .cart {
     border-radius: 19px 19px 7px 7px;
   }
   
   .cart .products .product {
-    display: grid;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 1rem;
+    display: flex !important; /* Switch from grid to flexbox */
+    align-items: flex-start; /* Align items to the top */
+    gap: 1.5rem;
+    padding: 1.5rem;
     border-bottom: 2px dotted #00ff22;
     margin-bottom: 1rem;
 }
+.cart .products .product > div:first-child {
+    flex: 0 0 8rem;
+    align-self: start;
+}
 
+.itemInfo {
+    flex-grow: 1; /* Take remaining space */
+    align-self: flex-start; /* Align to top */
+}
+
+  @keyframes graceful-exit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+    20% {
+      opacity: 0.9;
+      transform: translateY(-4px) scale(0.99);
+      filter: blur(0.5px);
+    }
+    40% {
+      opacity: 0.7;
+      transform: translateY(-8px) scale(0.98);
+      filter: blur(1px);
+    }
+    60% {
+      opacity: 0.4;
+      transform: translateY(-12px) scale(0.96);
+      filter: blur(2px);
+    }
+    80% {
+      opacity: 0.1;
+      transform: translateY(-16px) scale(0.94);
+      filter: blur(3px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.9);
+      filter: blur(4px);
+    }
+  }
+  
+  .product.removing {
+    animation: graceful-exit .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
 .cart .products .product {
     display: grid;
-    grid-template-columns: 10rem 10rem 5rem 5rem;
+    grid-template-columns: 0rem 10rem 5rem 5rem;
     min-width: 0; /* Prevents overflow */
 }
+
+.cart .products {
+    transition: background 0.6s ease;
+  }
+  
+  .cart .products.removing-item {
+    background: rgba(0, 202, 24, 0.05);
+  }
 
 
   .cart .quantity {
@@ -851,7 +821,25 @@ footer a {
     padding-bottom: 2px;
   }
 
+  .title2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00ca18;
+    background-color: transparent;
+  }
+
+  .totalPrice {
+    font-size: 1.5rem;
+    display:flex;
+    justify-content: flex-end;
+    border-top: 0.1rem solid #00ca18;
+    padding-top: 0.6rem;
+  }
+
   .couponBox {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
     height: 2rem;
   }
   
@@ -875,15 +863,22 @@ footer a {
     gap: 10px;
     padding: 10px;
   }
+
+  .apply-btn {
+    color: #00ca18;
+    background-color: transparent;
+    border: 1px solid #00ca18;
+    border-radius: 1rem;
+  }
   
   .input_field {
+    color: #008F11;
+    background-color: transparent;
     width: auto;
     height: 2rem;
     border-radius: 5px;
     outline: none;
-    border: 1px solid #e5e5e5;
-    filter: drop-shadow(0px 1px 0px #efefef)
-      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    border: 1px solid black;
     transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   }
   
@@ -893,13 +888,43 @@ footer a {
     color: #00ff22;
   }
 
+  /* Input group styling */
+.input2-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.input2 {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ca18;
+    padding: 0.8rem;
+    color: #00ff22;
+    flex: 1;
+}
+
+.button--submit {
+    background: #00ca18a5;
+    border: 2px solid #00ca18;
+    color: black;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.button--submit:hover {
+    background: #008F11;
+    border-color: #008F11;
+    transform: scale(1.05);
+}
+
   .form2 {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 1rem;
+    justify-content: flex-start;
   }
   
-  .coupons form2 button {
+  .coupons .form2 button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -917,15 +942,14 @@ footer a {
   }
   
   /* Checkout */
-  .checkout {
-    border: 2px solid #00ca18;
-  }
-  
+
   .checkout .details {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr;
     padding: 10px;
     gap: 5px;
+    align-items: center;
   }
   
   .checkout .details span {
@@ -933,14 +957,13 @@ footer a {
   }
   
   .checkout .details span:nth-child(odd) {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #00ca18; /* Cart detail color */
-    margin: auto auto auto 0;
   }
   
   .checkout .details span:nth-child(even) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #00ca18; /* Cart Prices */
     margin: auto 0 auto auto;
@@ -959,10 +982,8 @@ footer a {
     color: #00ca18; /* FInal Price */
     font-weight: 900;
     border-top: 2px solid #00ca18;
-    position: absolute;
     right: 1rem;
-    top: 50%;
-    transform: translateY(90%);
+    
   }
 
   .checkout .checkout-btn {
@@ -1037,8 +1058,110 @@ footer a {
   .quantity2 {
     display: none;
   }
+
   
 
+  @keyframes scanline {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 100%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+/* From Uiverse.io by 3HugaDa3 */ 
+.checkbox-wrapper {
+    --checkbox-size: 25px;
+    --checkbox-color: #00ff88;
+    --checkbox-shadow: rgba(0, 255, 136, 0.3);
+    --checkbox-border: rgba(0, 255, 136, 0.7);
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem 0rem;
+  }
+  
+  .checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  
+  
+  @keyframes pulse2 {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 20px var(--checkbox-shadow);
+    }
+    50% {
+      transform: scale(0.9);
+      box-shadow:
+        0 0 30px var(--checkbox-shadow),
+        0 0 50px var(--checkbox-shadow);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px var(--checkbox-shadow);
+    }
+  }
+  
+  .checkbox-wrapper .checkboxLabel {
+    color: var(--checkbox-color);
+    font-size: 0.5rem;
+    text-shadow: 0 0 10px var(--checkbox-shadow);
+    opacity: 0.9;
+    transition: all 0.3s;
+  }
+  
+  .checkbox-wrapper:hover .checkboxLabel {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  
+  /* Glowing dots animation */
+  .checkbox-wrapper::after,
+  .checkbox-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--checkbox-color);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  
+  .checkbox-wrapper::before {
+    left: -10px;
+    top: 50%;
+  }
+  
+  .checkbox-wrapper::after {
+    right: -10px;
+    top: 50%;
+  }
+  
+  .checkbox-wrapper:hover::before {
+    transform: translateX(-10px);
+    box-shadow: 0 0 10px var(--checkbox-color);
+  }
+  
+  .checkbox-wrapper:hover::after {
+    opacity: 1;
+    transform: translateX(10px);
+    box-shadow: 0 0 10px var(--checkbox-color);
+  }
+
+
+  
 @media (max-width: 768px) {
     
 body {
@@ -1170,7 +1293,7 @@ header img {
     margin: 0; /* Remove default margins */
     padding: 0; /* Remove padding */
     overflow: hidden; /* Hide any overflow */
-
+  
 }
 
 .loadingOverlay img {
@@ -1183,10 +1306,103 @@ header img {
 
 }
 
+/* Prdct and Card Styles for products  */
+.prdctTitle {
+  font-size: 1.04rem;
+  color: #000;
+  font-weight: bold;
+  margin: 0;
+}
 
-/*  make a javascript image carousel to connect with wordpress
+.prdctPrice {
+  font-size: 1.265rem;
+  font-weight: 900;
+  color: #008F11;
+  margin: 0;
+}
+
+.prdctDescription {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.95em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1; /* Keep above button */
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  width: 31rem;
+  height: 40rem;
+  box-shadow: 0 0.0625rem 0.8125rem rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin: 1.15rem;
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+.card::after {
+  content: "Add to Cart";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #00AC7C;
+  color: #fff;
+  padding: 1em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  text-align: center;
+  z-index: 2;
+}
+
+.card:hover::after {
+  bottom: 0;
+}
+
+.card:active::after {
+  content: "Added !";
+  background: #008F11;
+}
+
+.card:hover .image img {
+  transform: scale(1.18);
+}
+
+.image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image img {
+  width: 96%;
+  height: 96%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border: 0.125rem solid white;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+/* Remove card movement on hover */
+.card:hover {
+  transform: none;
+}
+
+
+/*  scanline animation everywhere
+    make a javascript image carousel to connect with wordpress
     fix background in contact to be the same as earing
-    product page needs fixing footer
-    change the got a voucher button to change to reddem 
-      
-    */ 
+*/ 

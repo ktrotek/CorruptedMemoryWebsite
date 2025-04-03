@@ -1,3 +1,12 @@
+// the loader works by hidding all the elements in the page before
+// the website loads except one in the testing case
+// its the one below hence the name .loadingOverlay on the script 
+//
+// <div class="loadingOverlay">
+// 
+// </div>
+
+
 let minimumDelay = 3000; // 3 seconds
 let startTime = Date.now();
 let hiddenElements = []; // Store elements we need to reveal later
