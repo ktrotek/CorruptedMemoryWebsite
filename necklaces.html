@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Necklaces │ Corrupted Memory </title>
+        <title> Earings │ Corrupted Memory </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-        <meta name="description" content="Necklaces Collection - Corrupted Memory">  
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta name="description" content="Earings Collection - Corrupted Memory">  
+        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
         <link href="stylesheet.css" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,13 +13,19 @@
     </head>
 
     <body>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                updateCartTotal();
+                displayAmountofItems();
+                }); 
+        </script>
         <header>
             <a href="index.html" title="Corrupted Memory Shop">
                 <img src="Images/letteringpng.png" alt="Corrupted Memory Logo" class="logo-middle">
             </a>
             <img src="Images/logo.png" alt="Corrupted Memory Logo" class="logo-left">
             <a href="shoppingCart.html" title="Shopping Cart">
-                <button data-quantity="0" class="cartButton">
+                <button class="cartButton">
                     <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
                     
                     <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
@@ -29,12 +35,12 @@
             </a> 
         </header>
 
-        <div class="productContainer">
+        <div class="productContainerCategories">
             <h3 class="productCategoriesTitle"><br></h3>
             
             <div class="productCategories">
                 <a href="necklaces.html" class="active" title="Necklaces">Necklaces</a> 
-                <a href="earings.html" title="Earings">Earings</a> 
+                <a href="earings.html"  title="Earings">Earings</a> 
                 <a href="bracelets.html" title="Bracelets">Bracelets</a> 
                 <a href="patches.html" title="Patches">Patches</a> 
                 <a href="keyrings.html" title="Keyrings">Keyrings</a>
@@ -46,34 +52,52 @@
                 <div class="productsList"> 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/glitch_pendant.jpg" alt="Glitch Pendant Necklace">
+                            <img src="Images/DSC05402.jpg" alt="Glitch Pendant Necklace">
                         </div>
-                        <span class="title">GLITCH PENDANT</span>
-                        <span class="price">85€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">EKce00x03</span>
+                            <span class="prdctPrice">115€</span>
+                        </div>
                     </div>
 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/data_chain.jpg" alt="Data Chain Necklace">
+                            <img src="Images/DSC05405.jpg" alt="Data Chain Necklace">
                         </div>
-                        <span class="title">DATA CHAIN</span>
-                        <span class="price">120€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">EKce00x03</span>
+                            <span class="prdctPrice">110€</span>
+                        </div>
                     </div>
 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/cyber_choker.jpg" alt="Cyber Choker Necklace">
+                            <img src="Images/DSC05370.jpg" alt="Cyber Choker Necklace">
                         </div>
-                        <span class="title">CYBER CHOKER</span>
-                        <span class="price">95€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">EKce00x03</span>
+                            <span class="prdctPrice">85€</span>
+                        </div>
                     </div>
 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/holo_cord.jpg" alt="Holo Cord Necklace">
+                            <img src="Images/DSC05361.jpg" alt="Holo Cord Necklace">
                         </div>
-                        <span class="title">HOLO CORD</span>
-                        <span class="price">75€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">EKce00x03</span>
+                            <span class="prdctPrice">85€</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="image">
+                            <img src="Images/DSC05350.jpg" alt="Holo Cord Necklace">
+                        </div>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">EKce00x03</span>
+                            <span class="prdctPrice">80€</span>
+                        </div>
                     </div>
                 </div>
             </div>

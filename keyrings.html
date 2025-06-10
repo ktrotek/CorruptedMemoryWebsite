@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Keyrings │ Corrupted Memory </title>
+        <title> Earings │ Corrupted Memory </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-        <meta name="description" content="Keyrings Collection - Corrupted Memory">  
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta name="description" content="Earings Collection - Corrupted Memory">  
+        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
         <link href="stylesheet.css" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,13 +13,19 @@
     </head>
 
     <body>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                updateCartTotal();
+                displayAmountofItems();
+                }); 
+        </script>
         <header>
             <a href="index.html" title="Corrupted Memory Shop">
                 <img src="Images/letteringpng.png" alt="Corrupted Memory Logo" class="logo-middle">
             </a>
             <img src="Images/logo.png" alt="Corrupted Memory Logo" class="logo-left">
             <a href="shoppingCart.html" title="Shopping Cart">
-                <button data-quantity="0" class="cartButton">
+                <button class="cartButton">
                     <svg class="icon-cart" viewBox="0 0 24.38 30.52" height="30.52" width="24.38" xmlns="http://www.w3.org/2000/svg">
                     
                     <path transform="translate(-3.62 -0.85)" d="M28,27.3,26.24,7.51a.75.75,0,0,0-.76-.69h-3.7a6,6,0,0,0-12,0H6.13a.76.76,0,0,0-.76.69L3.62,27.3v.07a4.29,4.29,0,0,0,4.52,4H23.48a4.29,4.29,0,0,0,4.52-4ZM15.81,2.37a4.47,4.47,0,0,1,4.46,4.45H11.35a4.47,4.47,0,0,1,4.46-4.45Zm7.67,27.48H8.13a2.79,2.79,0,0,1-3-2.45L6.83,8.34h3V11a.76.76,0,0,0,1.52,0V8.34h8.92V11a.76.76,0,0,0,1.52,0V8.34h3L26.48,27.4a2.79,2.79,0,0,1-3,2.44Zm0,0"></path>
@@ -29,12 +35,12 @@
             </a> 
         </header>
 
-        <div class="productContainer">
+        <div class="productContainerCategories">
             <h3 class="productCategoriesTitle"><br></h3>
             
             <div class="productCategories">
                 <a href="necklaces.html" title="Necklaces">Necklaces</a> 
-                <a href="earings.html" title="Earings">Earings</a> 
+                <a href="earings.html"  title="Earings">Earings</a> 
                 <a href="bracelets.html" title="Bracelets">Bracelets</a> 
                 <a href="patches.html" title="Patches">Patches</a> 
                 <a href="keyrings.html" class="active" title="Keyrings">Keyrings</a>
@@ -46,35 +52,35 @@
                 <div class="productsList"> 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/circuit_keyring.jpg" alt="Circuit Board Keyring">
+                            <img src="Images/DSC05297.jpg" alt="Glitch Pendant Necklace">
                         </div>
-                        <span class="title">CIRCUIT KEY</span>
-                        <span class="price">20€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">RNGx0001</span>
+                            <span class="prdctPrice">15€</span>
+                        </div>
                     </div>
 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/byte_keyring.jpg" alt="Byte Symbol Keyring">
+                            <img src="Images/DSC05294.jpg" alt="Data Chain Necklace">
                         </div>
-                        <span class="title">BYTE KEY</span>
-                        <span class="price">18€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">RNGx0002</span>
+                            <span class="prdctPrice">25€</span>
+                        </div>
                     </div>
 
                     <div class="card">
                         <div class="image">
-                            <img src="Images/glitch_keyring.jpg" alt="Glitch Keyring">
+                            <img src="Images/DSC05285.jpg" alt="Cyber Choker Necklace">
                         </div>
-                        <span class="title">GLITCH KEY</span>
-                        <span class="price">22€</span>
+                        <div class="prdctDescription">
+                            <span class="prdctTitle">RNGx0002</span>
+                            <span class="prdctPrice">15€</span>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <div class="image">
-                            <img src="Images/holo_keyring.jpg" alt="Holo Keyring">
-                        </div>
-                        <span class="title">HOLO KEY</span>
-                        <span class="price">25€</span>
-                    </div>
+
                 </div>
             </div>
         </div>
