@@ -8,7 +8,7 @@ Built as a plain HTML + CSS + JavaScript site.
 ## Scripts
 
 - `shoppingCart.js` — cart state in `localStorage`, add/remove items, quantity and
-  total updates, cart badge count.
+  total updates, voucher etc.
 - `loader.js` — hides the page behind `.loadingOverlay` until load completes, with a
   3 second minimum so the animation is always seen.
 
