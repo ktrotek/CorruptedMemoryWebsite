@@ -1887,10 +1887,11 @@ header img {
   }
 }
 
-/*  scanline animation everywhere
-    javascript image carousel to connect with wordpress
-    fix background in contact to be the same as earing
-    when deleting items from cart the voucher disapears
-    add scanline to items https://uiverse.io/chase2k25/spotty-cheetah-81
-    change shippingn to faq
-*/ 
+/* TODO
+   - scanline animation everywhere
+   - fix background in contact to match earings
+   - voucher disappears when deleting items from the cart
+   - add scanline to items: https://uiverse.io/chase2k25/spotty-cheetah-81
+   - rename shipping to faq
+*/
+ 
