@@ -17,3 +17,4 @@ Built as a plain HTML + CSS + JavaScript site.
 
 Fourth website project. Things picked up along the way: mobile optimisation, a proper
 dive into Firefox's developer tools, and a better understanding of git.
+ 
