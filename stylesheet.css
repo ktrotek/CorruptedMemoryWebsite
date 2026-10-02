@@ -455,6 +455,13 @@ footer a {
     letter-spacing: 2px;
 }
 
+.comingSoon {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: clamp(2rem, 8vh, 6rem) 1rem;
+    text-align: center;
+}
+
 .aboutUsInfo {
     font-size: 1rem;
     margin: 1.5rem 0 0;
@@ -606,19 +613,6 @@ footer a {
   max-width: fit-content;
   margin: -1rem auto 1.5rem auto;
   padding: 0.5rem 1.5rem;
-}
-
-.slideCaption {
-  font-weight: 600;
-  color: #f2f2f2;
-  text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
-             1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
-  font-size: 15px;
-  position: absolute;
-  bottom: 0.5rem;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
 }
 
 .dot {
