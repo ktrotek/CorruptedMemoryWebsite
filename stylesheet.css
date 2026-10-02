@@ -103,11 +103,7 @@ footer a {
 .productCategories {
     text-align: center;
     font-size: 1.3rem;
-    margin-bottom: 2em;
     background-color: #0000005d;
-}
-
-.productCategories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -124,6 +120,7 @@ footer a {
     font-size: 1.5rem;
     font-weight: 1000;
     text-decoration: none; 
+    border-bottom: 2px solid transparent;
     position: relative; /* Required for the ::after pseudo-element */
     transition: text-shadow 0.3s ease, color 0.3s ease;
 }
@@ -149,7 +146,7 @@ footer a {
 
 .productCategories a.active {
     color: #00ca18 !important;
-    border-bottom: 2px solid #00ca18;
+    border-bottom-color: #00ca18;
 }
 
 
@@ -187,12 +184,6 @@ footer a {
     background-size: 100% 140%;
     background-image: url('Images/cyberascii.png');
     background-repeat: repeat-y;
-}
-
-.productCategoriesTitle h3 {
-    animation: pulse 3s ease-in-out infinite;
-    margin: 0;
-    
 }
 
 .landingButton {
