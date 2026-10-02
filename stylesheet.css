@@ -1,3 +1,23 @@
+/* Fade between pages (Chrome, Edge, Safari 18.2+; other browsers just switch instantly) */
+@view-transition {
+    navigation: auto;
+}
+
+/* Header and footer are the same on every page, so keep them still and fade only the content */
+header { view-transition-name: site-header; }
+footer { view-transition-name: site-footer; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    @view-transition {
+        navigation: none;
+    }
+}
+
 body {
     font-family: 'Exo 2';
     font-size: 1.3rem;
@@ -184,6 +204,35 @@ footer a {
     background-size: 100% 140%;
     background-image: url('Images/cyberascii.png');
     background-repeat: repeat-y;
+}
+
+/* About: stretch the box to fill the space between header and footer */
+.productContainerAboutUs {
+    display: flex;
+    flex-direction: column;
+}
+
+.productContainerAboutUs .aboutContent {
+    max-width: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.productContainerAboutUs .cyber-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.productContainerAboutUs .pulse-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .landingButton {
