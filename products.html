@@ -63,10 +63,6 @@
                     <img src="Images/DSC05332.jpg">
                 </div>
 
-                <div class="slideshowSlides">
-                    <img src="Images/IMG_9438.JPG">
-                </div>
-                
             </div>
                 <div class="slideshowControls">
                     <div style="text-align:center" class="dots-container">
@@ -95,33 +91,41 @@
             <a href="shipping.html" title="Shipping"> Shipping </a>
             </div>
         </footer>
-        <script> let slideIndex = 1;
+        <script>
+            let slideIndex = 1;
+            let slideTimer;
             showSlides(slideIndex);
-            
+            startSlideTimer();
+
+            // Advance to the next slide every 5 seconds
+            function startSlideTimer() {
+              clearInterval(slideTimer);
+              slideTimer = setInterval(() => plusSlides(1), 5000);
+            }
+
             // Next/previous controls
             function plusSlides(n) {
               showSlides(slideIndex += n);
             }
-            
-            // Thumbnail image controls
+
+            // Dot controls; restart the timer so a picked slide stays up for the full 5 seconds
             function currentSlide(n) {
               showSlides(slideIndex = n);
+              startSlideTimer();
             }
-            
+
             function showSlides(n) {
-              let i;
               let slides = document.getElementsByClassName("slideshowSlides");
               let dots = document.getElementsByClassName("dot");
               if (n > slides.length) {slideIndex = 1}
               if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+              for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.toggle("current", i === slideIndex - 1);
               }
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+              for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.toggle("active", i === slideIndex - 1);
               }
-              slides[slideIndex-1].style.display = "block";
-              dots[slideIndex-1].className += " active";
-            } </script>
+            }
+        </script>
     </body>
 </html>
