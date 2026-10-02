@@ -20,9 +20,9 @@ header {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    padding: 1.5rem 2rem; 
+    padding: 1.1rem 2rem; 
     margin: 0; 
-    height: 4rem;
+    height: 3rem;
     position: relative; 
 }
 
@@ -48,12 +48,12 @@ main {
 }
 
 footer {
-    min-height: 3rem;
+    min-height: 2.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    padding: 1.5rem 1rem;
+    padding: 0.7rem 1rem;
     text-align: right;
     grid-row: 3;  /* Places footer at the bottom */
 }
@@ -113,7 +113,7 @@ footer a {
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .productCategories a {
@@ -191,6 +191,7 @@ footer a {
 
 .productCategoriesTitle h3 {
     animation: pulse 3s ease-in-out infinite;
+    margin: 0;
     
 }
 
@@ -324,7 +325,7 @@ footer a {
 .aboutContent {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem 2rem;
     color: white;
     text-align: center;
 }
@@ -333,15 +334,19 @@ footer a {
   animation: pulse 3s ease-in-out infinite;
   color: antiquewhite;
   border: 2px solid #00ca1887;
-  padding: 2rem;
-  margin: 2rem auto;
+  padding: 1.5rem;
+  margin: 1rem auto;
   background: rgba(0, 0, 0, 0.7);
+}
+
+.aboutContent .cyber-text > br {
+    display: none;
 }
 
 .glitch-text {
     letter-spacing:0.3rem;
     text-align: center;
-    font-size: clamp(1.2rem, 2.4vw, 2.5rem);
+    font-size: clamp(1.1rem, min(2.4vw, 3.2vh), 2.5rem);
     -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
     animation: text-glitch 1.5s infinite;
     padding: 0;
@@ -414,13 +419,13 @@ footer a {
     grid-template-columns: repeat(2, 0.5fr);
     gap: 3rem;
     max-width: 1500px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 0 2rem;
 }
 
 .shipping-card {
     background: rgba(0, 0, 0, 0.8);
-    padding: 2rem;
+    padding: 1rem 2rem;
     border: 1px solid #00ca18;
 }
 
@@ -432,7 +437,7 @@ footer a {
 }
 
 .cyber-list li {
-    margin: 1.5rem 0;
+    margin: clamp(0.4rem, 2vh, 1.5rem) 0;
     padding-left: 1.6rem;
     position: relative;
     
@@ -446,8 +451,8 @@ footer a {
 
 .crypto-notice {
     max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 1rem;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #00ca18;
@@ -461,6 +466,7 @@ footer a {
 
 .aboutUsInfo {
     font-size: 1rem;
+    margin: 1.5rem 0 0;
 }
 .contact-grid {
     display: grid;
@@ -481,7 +487,7 @@ footer a {
 .cyber-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -528,17 +534,21 @@ footer a {
 
 .contact-form {
     max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 1.5rem 2rem;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #00ca18;
 }
 
 .contact-card {
     max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 0.5rem 2rem;
     text-align: center;
+}
+
+.contact-card .cyber-list li {
+    margin: 0.5rem 0;
 }
 
 .comms-note {
@@ -551,12 +561,12 @@ footer a {
     text-align: center;
     color: #00ca18;
     -webkit-text-stroke: 0.03rem rgb(188, 252, 175);
-        margin: 1rem 0 2rem;
+        margin: 0 0 1rem;
 
 }
 
 .cyber-form textarea {
-    height: 150px;
+    height: clamp(60px, calc(100vh - 590px), 150px);
     resize: vertical;
 }
 
@@ -572,12 +582,13 @@ footer a {
 
 .slideshow {
   max-width: 800px;
-  margin: 3rem auto;
+  margin: 1.5rem auto;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.8);
   position: relative;
   overflow: hidden;
-  height: 400px;
+  /* shrink on short screens so the page fits without scrolling */
+  height: clamp(200px, calc(100vh - 420px), 400px);
   z-index: 1;
   border-radius: 0.8rem;
 }
@@ -602,7 +613,7 @@ footer a {
 .slideshowControls {
   background-color: #000000da;
   max-width: fit-content;
-  margin: -1rem auto 3rem auto;
+  margin: -1rem auto 1.5rem auto;
   padding: 0.5rem 1.5rem;
 }
 
